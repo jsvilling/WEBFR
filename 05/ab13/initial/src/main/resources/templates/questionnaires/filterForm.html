@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: maincontent(~{::section})}">
+
+<body>
+    <section>
+        <form th:action="@{/questionnaires}" method="get">
+            <input type="text" th:field:${filterForm.filterString} class="form-control" name="filterString">
+            <button type="submit">Filter</button>
+        </form>
+    </section>
+</body>
+</html>

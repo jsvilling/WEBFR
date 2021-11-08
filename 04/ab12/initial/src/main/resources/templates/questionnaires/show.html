@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: maincontent(~{::section})}">
+
+<head>
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <section>
+        <h3>Questionnaire</h3>
+        <strong th:text="${questionnaire.title}">sample title</strong>
+        <br />
+        <span th:text="${questionnaire.description}">sample description</span>
+    </section>
+</body>
+
+</html>

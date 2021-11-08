@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div th:fragment="menu">
+        <div>
+            <a th:href="@{/questionnaires}">All Questionnaires</a></br>
+            <a th:href="@{/questionnaires} + '?filterForm'">Filter Questionnaires</a></br>
+            <a th:href="@{/questionnaires} + '?form'">Create Questionnaire</a>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: maincontent(~{::section})}">
+
+<head>
+	<title>flashcard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+	<section>
+		<a class="btn btn-success float-right" href="?form">
+			Add Questionnaire
+		</a>
+		<h3>Questionnaires</h3>
+		<div th:if="${questionnaires.isEmpty()}">
+			<h2 style="text-align: center">No Questionnaires found</h2>
+		</div>
+		<div style="padding-top: 10px;">
+			<table class="table table-condensed table-hover">
+				<tbody>
+					<tr th:each="questionnaire : ${questionnaires}">
+						<td colspan="1" style="vertical-align: middle;" th:text="${questionnaire.id}" />
+						<td colspan="3" style="vertical-align: middle;" th:text="${questionnaire.title}" />
+                        <td colspan="10" style="vertical-align: middle;" th:text="${questionnaire.description}" />
+                        <td>
+							<div class="btn-group float-right" role="group">
+								<div>
+                                    <a th:href="@{/questionnaires} + '/' + ${questionnaire.id}" class="btn btn-secondary" role="button">Show</a>
+								</div>
+								<div>
+									<form action="#" th:action="@{/questionnaires} + '/' + ${questionnaire.id}" method="post">
+										<input type="hidden" name="_method" value="DELETE" />
+										<button type="submit" class="btn btn-danger">
+											Delete
+										</button>
+									</form>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</body>
+
+</html>
